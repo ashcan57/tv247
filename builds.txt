@@ -1,6 +1,6 @@
 name="Encore-Build"
 version="1.0"
-url="https://www.dropbox.com/scl/fi/wi7zgffhjflxk8cen0fik/Encore.zip?rlkey=qeyd4k3gh0ciltmfmzcv714tu&st=cb9oh6sr&dl=1"
+url="https://www.dropbox.com/scl/fi/pno2qa8ey1pmqhtr4fkqp/Encore.zip?rlkey=fxhvhzlwhpz2x8s0wh27ijh9g&st=dysgpbyy&dl=1"
 minor="http://"
 gui="url.to.guisettings"
 kodi="21.0"
