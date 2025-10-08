@@ -17,7 +17,7 @@ ADDONTITLE = '[COLOR limegreen][B]TV247[/B][/COLOR]Wizard'
 BUILDERNAME = 'TV247Wizard'
 EXCLUDES = [ADDON_ID, 'repository.tv247']
 # Text File with build info in it. Please read https://github.com/a4k-openproject/plugin.program.openwizard/wiki/Installing-Builds
-BUILDFILE = 'https://github.com/ashcan57/tv247/main/builds.txt'
+BUILDFILE = 'https://raw.githubusercontent.com/ashcan57/tv247/master/builds.txt'
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK = 0
