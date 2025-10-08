@@ -1,29 +1,33 @@
-################################################################################
-#      Copyright (C) 2019 drinfernoo                                           #
-#                                                                              #
-#  This Program is free software; you can redistribute it and/or modify        #
-#  it under the terms of the GNU General Public License as published by        #
-#  the Free Software Foundation; either version 2, or (at your option)         #
-#  any later version.                                                          #
-#                                                                              #
-#  This Program is distributed in the hope that it will be useful,             #
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of              #
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the                #
-#  GNU General Public License for more details.                                #
-#                                                                              #
-#  You should have received a copy of the GNU General Public License           #
-#  along with XBMC; see the file COPYING.  If not, write to                    #
-#  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.       #
-#  http://www.gnu.org/copyleft/gpl.html                                        #
-################################################################################
+import xbmc
+import xbmcgui
+import xbmcvfs
+import os
+import urllib.request
+import zipfile
 
+# Dropbox link
+dropbox_url = "https://www.dropbox.com/scl/fi/90rsb9oal9dc3fp3g1l8s/dab19.zip?rlkey=5st59x4bq5xpvljnf0rlflu1z&st=ju2x15xu&dl=1"
 
-if __name__ == '__main__':
-    import sys
-    from resources.libs.common import router
+# Destination path (Kodi userdata folder)
+dest_path = xbmcvfs.translatePath(os.path.join(xbmc.translatePath("special://home"), "downloads", "tv247.zip"))
 
-    _handle = int(sys.argv[1])
-    _params = sys.argv[2][1:]
-    
-    dispatcher = router.Router()
-    dispatcher.dispatch(_handle, _params)
+# Show a dialog
+dialog = xbmcgui.Dialog()
+dialog.notification("TV247", "Downloading build...", xbmcgui.NOTIFICATION_INFO, 5000)
+
+# Download the file
+try:
+    urllib.request.urlretrieve(dropbox_url, dest_path)
+    dialog.notification("TV247", "Download complete!", xbmcgui.NOTIFICATION_INFO, 5000)
+except Exception as e:
+    dialog.ok("TV247Encore", f"Download failed: {e}")
+    exit()
+
+# Optionally extract the zip to Kodi home directory
+try:
+    extract_path = xbmc.translatePath("special://home/")
+    with zipfile.ZipFile(dest_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_path)
+    dialog.notification("TV247", "Build installed!", xbmcgui.NOTIFICATION_INFO, 5000)
+except Exception as e:
+    dialog.ok("TV247", f"Extraction failed: {e}")
