@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.tv247" name="[COLOR limegreen][B]TV247[/B][/COLOR]Wizard Repository" version="1.0" provider-name="Ashcan">
+
+    <extension point="xbmc.addon.repository">
+        <dir>
+            <info>https://raw.githubusercontent.com/ashcan57/tv247/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/ashcan57/tv247/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/ashcan57/tv247/master/zips/</datadir>
+        </dir>
+    </extension>
+    
+    <extension point="xbmc.addon.metadata">
+        <summary>[COLOR limegreen][B]TV247[/B][/COLOR]Wizard</summary>
+        <description>The official home of [COLOR limegreen][B]TV247[/B][/COLOR]Wizard.</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <source>https://www.github.com/a4k-openproject/repository.openwizard/</source>
+    </extension>
+</addon>
