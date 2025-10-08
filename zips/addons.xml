@@ -1,4 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="repository.tv247" version="1.0.0" provider-name="ashcan57" />
-<addon id="plugin.program.tv247" version="1.0.0" provider-name="ashcan57" />
+<addon id="plugin.program.tv247"
+       name="247Wizard"
+       version="1.0.0"
+       provider-name="ashcan57">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Official 247 Kodi build installer</summary>
+        <description>Installs and manages 247 Kodi builds</description>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="repository.tv247"
+       name="TV247 Repo"
+       version="1.0.0"
+       provider-name="ashcan57">
+    <extension point="xbmc.addon.repository" name="TV247 Repo">
+        <info compressed="false">https://raw.githubusercontent.com/ashcan57/tv247/main/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/ashcan57/tv247/main/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/ashcan57/tv247/main/zips/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>TV247 Repo</summary>
+        <description>Repository for 247 Wizard builds and addons</description>
+        <platform>all</platform>
+    </extension>
+</addon>
 </addons>
