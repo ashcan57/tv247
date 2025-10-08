@@ -1,2 +1,0 @@
-msgid "addon.name"
-msgstr "247Wizard"
