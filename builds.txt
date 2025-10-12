@@ -1,6 +1,6 @@
 name="TV247 Build"
 version="1.0"
-url="https://www.dropbox.com/scl/fi/0tec1ibzd8ng7f4nwyckm/Encore.zip?rlkey=di2f50a3n4v2uku6evxylw569&st=plfb7pzh&dl=1"
+url="https://www.dropbox.com/scl/fi/90rsb9oal9dc3fp3g1l8s/dab19.zip?rlkey=5st59x4bq5xpvljnf0rlflu1z&st=id8ns4jx&dl=1"
 gui="none"
 kodi="21.0"
 theme="none"

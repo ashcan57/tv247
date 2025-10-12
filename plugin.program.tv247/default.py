@@ -7,12 +7,14 @@ import zipfile
 
 dropbox_url = "https://www.dropbox.com/scl/fi/90rsb9oal9dc3fp3g1l8s/dab19.zip?rlkey=5st59x4bq5xpvljnf0rlflu1z&st=ju2x15xu&dl=1"
 
-home_path = xbmcvfs.translatePath("special://home/")
+home_path = xbmcvfs.translatePath("special://home")
 downloads_path = os.path.join(home_path, "downloads")
 if not xbmcvfs.exists(downloads_path):
     xbmcvfs.mkdirs(downloads_path)
 
-dest_path = os.path.join(downloads_path, "tv247.zip")
+dest_path = xbmcvfs.translatePath(
+    os.path.join(home_path, "downloads", "tv247.zip")
+)
 
 dialog = xbmcgui.Dialog()
 dialog.notification("TV247", "Downloading build...", xbmcgui.NOTIFICATION_INFO, 5000)
