@@ -1,39 +1,48 @@
-import xbmc
+# repo/plugin.video.ev247/default.py
+import sys
 import xbmcgui
-import xbmcvfs
-import os
-import urllib.request
-import zipfile
+import xbmcplugin
+import xbmcaddon
+import urllib.parse
 
-dropbox_url = "https://www.dropbox.com/scl/fi/90rsb9oal9dc3fp3g1l8s/dab19.zip?rlkey=5st59x4bq5xpvljnf0rlflu1z&st=ju2x15xu&dl=1"
+ADDON = xbmcaddon.Addon()
+HANDLE = int(sys.argv[1])          # Kodi passes the handle as the second argument
+BASE_URL = sys.argv[0]
 
-home_path = xbmcvfs.translatePath("special://home")
-downloads_path = os.path.join(home_path, "downloads")
-if not xbmcvfs.exists(downloads_path):
-    xbmcvfs.mkdirs(downloads_path)
+def list_root():
+    """Show a static list of two example streams."""
+    streams = [
+        {
+            'name': 'Sample Stream 1',
+            'url':  'https://example.com/stream1.m3u8',
+            'thumb': 'https://example.com/thumb1.jpg'
+        },
+        {
+            'name': 'Sample Stream 2',
+            'url':  'https://example.com/stream2.m3u8',
+            'thumb': 'https://example.com/thumb2.jpg'
+        }
+    ]
 
-dest_path = xbmcvfs.translatePath(
-    os.path.join(home_path, "downloads", "tv247.zip")
-)
+    for s in streams:
+        li = xbmcgui.ListItem(label=s['name'])
+        li.setArt({'thumb': s['thumb'], 'icon': s['thumb']})
+        li.setInfo('video', {'title': s['name'], 'mediatype': 'video'})
+        xbmcplugin.addDirectoryItem(handle=HANDLE,
+                                    url=s['url'],
+                                    listitem=li,
+                                    isFolder=False)
 
-dialog = xbmcgui.Dialog()
-dialog.notification("TV247", "Downloading build...", xbmcgui.NOTIFICATION_INFO, 5000)
+    xbmcplugin.endOfDirectory(HANDLE)
 
-try:
-    urllib.request.urlretrieve(dropbox_url, dest_path)
-    dialog.notification("TV247", "Download complete!", xbmcgui.NOTIFICATION_INFO, 5000)
-except Exception as e:
-    dialog.ok("TV247", f"Download failed: {e}")
-    raise SystemExit
+def router(paramstring):
+    """Simple router – right now we only have the root list."""
+    params = dict(urllib.parse.parse_qsl(paramstring))
+    if not params:
+        list_root()
+    else:
+        # Future extensions could handle categories, search, etc.
+        list_root()
 
-try:
-    extract_path = home_path
-    with zipfile.ZipFile(dest_path, 'r') as zip_ref:
-        for member in zip_ref.infolist():
-            try:
-                zip_ref.extract(member, extract_path)
-            except PermissionError:
-                xbmc.log(f"Skipping locked file: {member.filename}", xbmc.LOGWARNING)
-    dialog.notification("TV247", "Build installed (skipped locked files).", xbmcgui.NOTIFICATION_INFO, 7000)
-except Exception as e:
-    dialog.ok("TV247", f"Extraction failed: {e}")
+if __name__ == '__main__':
+    router(sys.argv[2][1:])   # strip leading '?'
