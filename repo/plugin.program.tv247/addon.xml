@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon
+    id="plugin.video.tv247"
+    name="TV247 Video Plug‑in"
+    version="1.0.0"
+    provider-name="ashcan57"
+    type="xbmc.python.video"
+    requires="xbmc.python,2.26.0"
+    summary="Stream video content from TV247"
+    description="Provides a list of live streams and VOD from the TV247 service."
+    icon="resources/icon.png"
+    fanart="resources/fanart.jpg"
+    website="https://github.com/ashcan57/tv247-plugin">
+
+    <!-- Declare that this is a video plug‑in -->
+    <extension point="xbmc.addon.metadata">
+        <provides>
+            <video/>
+        </provides>
+    </extension>
+
+    <!-- Entry point for the plug‑in -->
+    <extension point="xbmc.python.pluginsource" library="default.py"/>
+
+</addon>

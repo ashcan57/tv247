@@ -1,4 +1,4 @@
-# repo/plugin.video.tv247/default.py
+# repo/plugin.video.ev247/default.py
 import sys
 import xbmcgui
 import xbmcplugin
