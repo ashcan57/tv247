@@ -1,28 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.tv247"
-       version="1.0.0"
-       name="TV247 Wizard"
-       provider-name="ashcan57"
-       type="xbmc.python.script"
-       summary="Wizard for installing TV247 streams."
-       description="A simple wizard that adds the TV247 repository and installs the TV247 streaming add‑on."
-       architecture="any">
-
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-
-    <extension point="xbmc.python.pluginsource" library="lib/main.py">
+<addon
+    id="plugin.program.tv247"
+    name="TV247"
+    version="1.0.0"
+    provider-name="ashcan57">
+    <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
     </extension>
-
     <extension point="xbmc.addon.metadata">
+        <summary>TV247 Program Addon</summary>
+        <description>Program addon for TV247 by ashcan57.</description>
         <platform>all</platform>
-        <language>en</language>
-        <icon>icon.png</icon>
-    </extension>
-
-    <extension point="xbmc.addon.gui">
-        <menu>TV247 Wizard</menu>
     </extension>
 </addon>
+

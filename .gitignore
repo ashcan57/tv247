@@ -1,0 +1,9 @@
+*.pyc
+*.pyo
+__pycache__/
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
+*.zip
+!builds/dab19.zip
