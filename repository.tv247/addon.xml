@@ -1,17 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="repository.tv247"
        version="1.0.0"
        name="TV247 Repository"
-       provider-name="ashcan57">
+       provider-name="ashcan57"
+       type="xbmc.addon.repository">
+
+    <requires>
+        <import addon="xbmc.addon" version="2.0.0"/>
+    </requires>
+
+    <extension point="xbmc.addon.repository" name="TV247 Repository">
+        <!-- This points to the catalog that lists the wizard add‑on -->
+        <info compressed="true">
+            https://raw.githubusercontent.com/ashcan57/tv247/main/repository.tv247/addons.xml
+        </info>
+        <checksum>sha256</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/ashcan57/tv247/main/repository.tv247/</datadir>
+    </extension>
+
     <extension point="xbmc.addon.metadata">
         <summary>Repository for TV247 Wizard and future TV247 plugins.</summary>
         <description>Provides the TV247 Wizard and any future TV247‑related add‑ons.</description>
         <platform>all</platform>
         <language>en</language>
         <icon>icon.png</icon>
-    </extension>
-    <extension point="xbmc.addon.repository">
-        <info compressed="true">
-            https://github.com/ashcan57/tv247/raw/main/repository.tv247.zip
-        </info>
     </extension>
 </addon>

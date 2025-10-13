@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 
-    <!-- ==============================================================
-         Repository add‑on (optional – lets users install the repo
-         itself from the repo).  The <info> tag points to the ZIP that
-         contains the folder repository.tv247/.
-         ============================================================== -->
+    <!-- ---------- Repository add‑on (optional) ---------- -->
     <addon id="repository.tv247"
            version="1.0.0"
            name="TV247 Repository"
@@ -18,7 +14,7 @@
             <icon>icon.png</icon>
         </extension>
 
-        <!-- URL of the ZIP that contains the repository add‑on -->
+        <!-- ZIP that contains the repository folder itself -->
         <extension point="xbmc.addon.repository">
             <info compressed="true">
                 https://github.com/ashcan57/tv247/raw/main/repository.tv247.zip
@@ -28,12 +24,7 @@
         </extension>
     </addon>
 
-
-    <!-- ==============================================================
-         Wizard add‑on – the program users will actually install.
-         The <info> tag points to the ZIP that contains the folder
-         plugin.program.tv247/.
-         ============================================================== -->
+    <!-- ---------- Wizard add‑on (the one users install) ---------- -->
     <addon id="plugin.program.tv247"
            version="1.0.0"
            name="TV247 Wizard"
@@ -46,11 +37,11 @@
             <icon>icon.png</icon>
         </extension>
 
-        <!-- URL of the ZIP that contains the wizard add‑on -->
+        <!-- ZIP that contains the wizard folder -->
         <extension point="xbmc.addon.repository">
             <info compressed="true">
                 https://github.com/ashcan57/tv247/raw/main/plugin.program.tv247.zip
-                <!-- Or, if you use a release asset:
+                <!-- Release‑asset alternative:
                      https://github.com/ashcan57/tv247/releases/download/v1.0.0/plugin.program.tv247.zip -->
             </info>
         </extension>
