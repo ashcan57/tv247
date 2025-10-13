@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+
+    <!-- ==============================================================
+         Repository add‑on (optional – lets users install the repo
+         itself from the repo).  The <info> tag points to the ZIP that
+         contains the folder repository.tv247/.
+         ============================================================== -->
+    <addon id="repository.tv247"
+           version="1.0.0"
+           name="TV247 Repository"
+           provider-name="ashcan57">
+        <extension point="xbmc.addon.metadata">
+            <summary>Repository for TV247 Wizard and future TV247 plugins.</summary>
+            <description>Provides the TV247 Wizard and any future TV247‑related add‑ons.</description>
+            <platform>all</platform>
+            <language>en</language>
+            <icon>icon.png</icon>
+        </extension>
+
+        <!-- URL of the ZIP that contains the repository add‑on -->
+        <extension point="xbmc.addon.repository">
+            <info compressed="true">
+                https://github.com/ashcan57/tv247/raw/main/repository.tv247.zip
+                <!-- If you publish a release, you could use:
+                     https://github.com/ashcan57/tv247/releases/download/v1.0.0/repository.tv247.zip -->
+            </info>
+        </extension>
+    </addon>
+
+
+    <!-- ==============================================================
+         Wizard add‑on – the program users will actually install.
+         The <info> tag points to the ZIP that contains the folder
+         plugin.program.tv247/.
+         ============================================================== -->
+    <addon id="plugin.program.tv247"
+           version="1.0.0"
+           name="TV247 Wizard"
+           provider-name="ashcan57">
+        <extension point="xbmc.addon.metadata">
+            <summary>TV247 Wizard – easy installation of the TV247 streaming source.</summary>
+            <description>Installs the TV247 wizard and configures the necessary repositories.</description>
+            <platform>all</platform>
+            <language>en</language>
+            <icon>icon.png</icon>
+        </extension>
+
+        <!-- URL of the ZIP that contains the wizard add‑on -->
+        <extension point="xbmc.addon.repository">
+            <info compressed="true">
+                https://github.com/ashcan57/tv247/raw/main/plugin.program.tv247.zip
+                <!-- Or, if you use a release asset:
+                     https://github.com/ashcan57/tv247/releases/download/v1.0.0/plugin.program.tv247.zip -->
+            </info>
+        </extension>
+    </addon>
+
+</addons>
