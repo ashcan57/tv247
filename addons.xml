@@ -8,20 +8,20 @@
         <import addon="script.kodi.android.update" optional="true" version="1.1.7" />
         <import addon="script.speedtester" optional="true" version="1.1.2" />
     </requires>
-
+    
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
     </extension>
-
+    
     <extension point="xbmc.service" library="startup.py" start="startup" />
-
+    
     <extension point="xbmc.addon.metadata">
         <summary lang="en">[COLOR limegreen]TV247[/COLOR]Wizard</summary>
         <description lang="en">[COLOR limegreen]TV247[/COLOR]Wizard offers many maintenance features, selective add-on data saving, and automated build installs.</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <source>https://www.github.com/a4k-openproject/plugin.program.openwizard/</source>
-
+        
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.png</fanart>
@@ -48,4 +48,5 @@
         </assets>
     </extension>
 </addon>
+
 </addons>
