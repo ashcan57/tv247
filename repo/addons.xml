@@ -1,0 +1,9 @@
+<addons>
+    <addon id="repository.tv247" name="TV247 Repo" version="1.0.0" provider-name="ashcan">
+        <extension point="xbmc.addon.repository">
+            <dir>https://ashcan57.github.io/tv247/repo/</dir>
+            <info>https://ashcan57.github.io/tv247/repo/addons.xml</info>
+            <checksum>https://ashcan57.github.io/tv247/repo/addons.xml.md5</checksum>
+        </extension>
+    </addon>
+</addons>
