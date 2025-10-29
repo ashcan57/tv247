@@ -1,13 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TV247 Repository</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TV247 Kodi Build</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(135deg, #0d1117, #1f2937);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 4rem 1rem 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      color: #aaa;
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    code {
+      background: #111;
+      color: #0ff;
+      padding: 0.3rem 0.5rem;
+      border-radius: 5px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #0ff;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.2s ease-in-out;
+    }
+    .button:hover {
+      background: #00bcd4;
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
 </head>
-<body style="font-family:sans-serif; text-align:center; padding-top:100px;">
-  <h1>📺 TV247 Kodi Repository</h1>
-  <p>Your repository is live and ready for Kodi installation!</p>
-  <p>Base URL for Kodi: <br>
-     <code>https://raw.githubusercontent.com/ashcan57/tv247/main/</code></p>
+<body>
+  <header>
+    <h1>📺 TV247 Kodi Build</h1>
+    <p class="subtitle">The official Kodi repository for TV247</p>
+  </header>
+
+  <div class="content">
+    <h2>Installation URL</h2>
+    <p>In Kodi, go to:</p>
+    <ol style="text-align:left; display:inline-block; text-align:left;">
+      <li>Settings ⚙️ → File Manager</li>
+      <li>Add Source → <strong>None</strong></li>
+      <li>Enter this URL:</li>
+    </ol>
+    <p>
+      <code>https://raw.githubusercontent.com/ashcan57/tv247/main/</code>
+    </p>
+    <p>Then name it <strong>TV247</strong> and install the repository ZIP from there.</p>
+
+    <a class="button" href="https://raw.githubusercontent.com/ashcan57/tv247/main/zips/repository.tv247.zip">
+      ⬇️ Download Repository ZIP
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 TV247 — Built and maintained by Ashcan57
+  </footer>
 </body>
 </html>
+
