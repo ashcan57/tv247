@@ -20,4 +20,21 @@
       <platform>all</platform>
     </extension>
   </addon>
+
+  <!-- Your plugin entry -->
+  <addon id="plugin.video.tv247"
+         name="TV247 Video Add-on"
+         version="1.0.0"
+         provider-name="Ashcan57">
+    <extension point="xbmc.python.pluginsource"
+               library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>Demo video add-on from the TV247 repo.</summary>
+      <description>This is a simple example plug-in so you can confirm that your repository installs and serves add-ons correctly.</description>
+      <platform>all</platform>
+    </extension>
+  </addon>
 </addons>
+
