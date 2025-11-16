@@ -1,8 +1,32 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<addons><addon id="script.tv247.installer" version="1.0.3" name="TV247 Build Installer" provider-name="Ashcan57">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-    </requires>
-    <extension point="xbmc.python.script" library="default.py" />
-    <summary>Installer for the Encore Kodi Build</summary>
-</addon></addons>
+<addons>
+    <addon id="repository.tv247"
+           name="TV247 Repository"
+           version="1.0.0"
+           provider-name="TV247">
+        <extension point="xbmc.addon.repository"
+                   name="TV247 Repo">
+            <info compressed="false">https://ashcan57.github.io/tv247/zips/addons.xml</info>
+            <checksum>https://ashcan57.github.io/tv247/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://ashcan57.github.io/tv247/zips/</datadir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>TV247 Build & Installer Repository</summary>
+            <description>Official repository for the TV247 Installer & builds.</description>
+            <platform>all</platform>
+        </extension>
+    </addon>
+
+    <addon id="script.tv247.installer"
+           name="TV247 Build Installer"
+           version="1.0.0"
+           provider-name="TV247">
+        <extension point="xbmc.python.script"
+                   library="default.py" />
+        <extension point="xbmc.addon.metadata">
+            <summary>Installer for TV247 Encore Build</summary>
+            <description>Downloads and installs the TV247 Encore build.</description>
+            <platform>all</platform>
+        </extension>
+    </addon>
+
+</addons>
