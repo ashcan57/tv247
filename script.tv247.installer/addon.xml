@@ -1,0 +1,11 @@
+<addon id="script.tv247.installer"
+       version="1.0.3"
+       name="TV247 Build Installer"
+       provider-name="Ashcan57">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py"/>
+    <summary>Installer for the Encore Kodi Build</summary>
+</addon>
+
