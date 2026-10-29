@@ -4,6 +4,7 @@ import xbmcvfs
 import urllib.request
 import os
 import re
+import json
 import zipfile
 
 BUILD_URL = "https://www.dropbox.com/scl/fi/g7446e9o8kbwb0sgs8au6/matrix.zip?rlkey=vexlkuwv8rz3wz0gpa47te6s0&st=r5hizwm0&dl=1"
@@ -24,6 +25,28 @@ def get_build_skin():
     except Exception:
         pass
     return ""
+
+
+def rpc(method, params):
+    return xbmc.executeJSONRPC(json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}))
+
+
+def apply_skin(skin):
+    """Switch skin now, while Kodi is running, so Kodi saves it to guisettings.xml on exit."""
+    if not skin or skin == xbmc.getSkinDir():
+        return
+    xbmc.executebuiltin("UpdateLocalAddons")
+    xbmc.sleep(3000)
+    rpc("Addons.SetAddonEnabled", {"addonid": skin, "enabled": True})
+    xbmc.sleep(1500)
+    rpc("Settings.SetSettingValue", {"setting": "lookandfeel.skin", "value": skin})
+    # accept the "keep this skin?" confirmation
+    for _ in range(20):
+        xbmc.sleep(500)
+        if xbmc.getCondVisibility("Window.IsActive(yesnodialog)"):
+            xbmc.executebuiltin("SendClick(11)")
+            break
+    xbmc.sleep(1500)
 
 
 def install_build():
@@ -74,6 +97,9 @@ def install_build():
         progress.update(100, "Installation complete!")
         xbmc.sleep(800)
         progress.close()
+
+        # switch to the build's skin now (the startup service is only a backup)
+        apply_skin(skin)
         restart = dialog.yesno("TV247 Wizard", f"{BUILD_NAME} Build installed successfully!\n\nRestart Kodi now?", nolabel="Later", yeslabel="Restart Now")
         if restart:
             xbmc.executebuiltin("RestartApp")
