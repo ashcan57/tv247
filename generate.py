@@ -58,11 +58,11 @@ def write_index(path, title, names):
         f.write("\n".join(lines))
 
 root_names = sorted(glob.glob("repository.tv247-*.zip"))
-root_names += [a + "/" for a in ADDONS]
-root_names += ["addons.xml", "addons.xml.md5"]
 write_index("index.html", "TV247 Repository", root_names)
 
+# subfolders get no index page; Kodi reaches them by direct URL
 for addon_id in ADDONS:
-    zips = [os.path.basename(z) for z in sorted(glob.glob(os.path.join(addon_id, addon_id + "-*.zip")))]
-    write_index(os.path.join(addon_id, "index.html"), addon_id, zips)
-print("index pages written")
+    p = os.path.join(addon_id, "index.html")
+    if os.path.exists(p):
+        os.remove(p)
+print("index page written")
