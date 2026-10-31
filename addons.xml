@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="repository.tv247" name="TV247 Repository" version="1.0.2" provider-name="ashcan57">
+<addon id="repository.tv247" name="TV247 Repository" version="1.0.3" provider-name="ashcan57">
   <requires>
     <import addon="xbmc.addon" version="17.0.0"/>
   </requires>

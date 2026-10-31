@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.zip binary
+*.png binary
+addons.xml text eol=lf
+addons.xml.md5 text eol=lf
